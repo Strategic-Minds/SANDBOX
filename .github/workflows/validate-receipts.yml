@@ -1,0 +1,25 @@
+name: Validate Receipts
+
+on:
+  pull_request:
+    paths:
+      - 'receipts/**/*.md'
+      - 'scripts/validate-receipts.mjs'
+      - '.github/workflows/validate-receipts.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'receipts/**/*.md'
+      - 'scripts/validate-receipts.mjs'
+      - '.github/workflows/validate-receipts.yml'
+
+jobs:
+  validate-receipts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate sandbox receipts
+        run: node scripts/validate-receipts.mjs
