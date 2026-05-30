@@ -24,6 +24,30 @@ Cadence: review every 5-minute Auto Builder loop; generate approval-ready conten
 
 Objective: turn Eden Skye brand ideas into scripts, captions, content packages, landing-page drafts, visual briefs, and approval-ready publishing assets.
 
+## Known Failures And Blockers
+
+Auto Builder is not globally ready yet. The current capability matrix reports:
+
+- Factory readiness score: 47.
+- Connector readiness: 4.
+- One-hour eligibility: 18.
+- GitHub readiness: Blocked in the matrix, even though manual sandbox GitHub proof is now working.
+- Vercel readiness: Blocked for deploy, rollback, and environment mutation surfaces.
+- Supabase readiness: Blocked for migrations, RLS, and function write surfaces.
+- Shopify readiness: Blocked for product, order, and webhook mutation surfaces.
+- Xyla readiness: Blocked.
+- Opus readiness: Blocked.
+- Slack readiness: Blocked for external approval messages.
+
+Matrix-level blockers:
+
+- Canonical repo still needs the one-hour factory installed end to end.
+- Connector mutations are still uneven across GitHub, Vercel, Supabase, Shopify, Xyla, Opus, and Slack.
+- Secrets and sandbox mutation surfaces are not fully connected.
+- Template packs exist conceptually but not yet as installed repo modules.
+
+This packet therefore proves only a governed SANDBOX documentation and receipt path. It does not prove global Auto Builder readiness.
+
 ## Allowed Actions
 
 - content_strategy
@@ -46,9 +70,9 @@ Objective: turn Eden Skye brand ideas into scripts, captions, content packages, 
 
 ## Risk Classification
 
-Level: Medium-low.
+Level: Medium.
 
-The payload is structurally safe because it is draft-only and contains explicit blocked actions. The recurring 5-minute cadence still needs governance because repeated execution can create operational drift if receipts, queue state, and approval boundaries are not enforced.
+The content-factory payload is structurally safe because it is draft-only and contains explicit blocked actions. The broader autonomous lane remains medium risk because the control plane still reports readiness failures, blocked connector mutation surfaces, and missing installed template modules. The recurring 5-minute cadence also needs governance because repeated execution can create operational drift if receipts, queue state, and approval boundaries are not enforced.
 
 ## Activation Conditions
 
@@ -59,6 +83,7 @@ Before this queued job is allowed to run beyond planning:
 3. A receipt must document that no Supabase write, Vercel deployment, Shopify mutation, Stripe action, public publishing, or external notification occurred during packet preparation.
 4. Any later queue-state change, runtime activation, or receipt insert in Supabase requires explicit approval.
 5. Any later promotion into Vercel production requires explicit approval.
+6. The readiness failures above must stay visible until they are resolved or explicitly accepted as known limits.
 
 ## First Runtime Output Target
 
@@ -77,6 +102,7 @@ These outputs should stay in reviewable draft form until separately approved for
 
 - Controlled branch created in SANDBOX.
 - Build packet added with source job id and payload constraints.
+- Known Auto Builder readiness failures recorded.
 - Receipt file added for validator coverage.
 - GitHub Actions receipt validator passes.
 - No Supabase write performed during this packet.
