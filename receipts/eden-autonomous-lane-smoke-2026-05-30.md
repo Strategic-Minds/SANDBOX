@@ -2,6 +2,7 @@
 
 Date: 2026-05-30
 Branch: `eden/autonomous-lane-smoke`
+Draft PR: https://github.com/Strategic-Minds/SANDBOX/pull/1
 Mode: Sandbox proof only
 
 ## Objective
@@ -36,9 +37,21 @@ The following actions remain blocked until explicitly approved:
 - [x] No Supabase write performed
 - [x] No Vercel deployment triggered
 - [x] No Shopify mutation performed
-- [ ] Draft PR opened for review
+- [x] Draft PR opened for review
+- [x] PR diff validated as one file added, no unrelated changes
+- [x] Automated GitHub status check queried
 - [ ] PR reviewed before merge
+
+## Validation Evidence
+
+- Base commit: `ebb894cc7798d5e9e543fc437b226ff5cacf49e4`
+- Head commit after validation update: recorded on this branch by GitHub commit history
+- Compare result: branch is ahead of `main` by sandbox receipt commits only
+- Changed file scope: `receipts/eden-autonomous-lane-smoke-2026-05-30.md`
+- GitHub status checks: none configured or returned for the commit at validation time
 
 ## Result
 
-If this receipt appears in a draft PR, the first proof of controlled autonomy is successful: Eden can prepare governed sandbox changes while preserving approval gates for production systems.
+The first proof of controlled autonomy is successful: Eden can prepare governed sandbox changes while preserving approval gates for production systems.
+
+This PR should remain draft until Jeremy explicitly approves review, merge, or any downstream promotion.
