@@ -1,0 +1,111 @@
+name: Eden Media Factory Preview Cron
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: "readiness, preview, or full-sandbox"
+        required: false
+        default: "preview"
+      force_preview_hook:
+        description: "Trigger preview hook when configured"
+        required: false
+        default: "false"
+  schedule:
+    # 6:00 AM America/New_York during EDT. Adjust to 11:00 UTC during EST if needed.
+    - cron: "0 10 * * *"
+    # Lightweight readiness heartbeat every six hours.
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: read
+
+env:
+  EDEN_BRAND: "Eden Skye"
+  EDEN_SYSTEM_MODE: "sandbox-preview"
+  EDEN_IMAGE_PROVIDER: "openai_gpt_image"
+  EDEN_VIDEO_PROVIDER: "heygen"
+  EDEN_DRIVE_MASTER_ROUTER: "https://docs.google.com/spreadsheets/d/12PaW83ldj_vvQ0OoKYtbHzbGzzf-w0tSoFSu-YAWKX4/edit?usp=drivesdk"
+  EDEN_DRIVE_GPT_IMAGE_QUEUE: "https://docs.google.com/spreadsheets/d/1B_P1mi-wxxKzpsMB4X14gi2hQdjssFUBPstCYxU6R18/edit?usp=drivesdk"
+  EDEN_DRIVE_IMAGE_LIBRARY: "https://docs.google.com/spreadsheets/d/1XUZzOsCHbz6JEftYJy2RKiM3QizVn_TIJ915hQeV-q0/edit?usp=drivesdk"
+  EDEN_DRIVE_WORKFLOW_BRIDGE: "https://docs.google.com/spreadsheets/d/1R-nLyThF1lYXvntL7tlopyjwjBWw4lRaJGaKic8TGiI/edit?usp=drivesdk"
+
+jobs:
+  sandbox-preview-readiness:
+    name: Build sandbox preview receipt
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout sandbox
+        uses: actions/checkout@v4
+
+      - name: Create preview readiness receipt
+        run: |
+          mkdir -p receipts
+          node <<'NODE'
+          const fs = require('fs');
+          const mode = process.env.GITHUB_EVENT_NAME === 'workflow_dispatch'
+            ? '${{ github.event.inputs.run_mode }}'
+            : 'scheduled';
+          const receipt = {
+            receipt_id: `eden-preview-${process.env.GITHUB_RUN_ID}`,
+            generated_at_utc: new Date().toISOString(),
+            repository: process.env.GITHUB_REPOSITORY,
+            ref: process.env.GITHUB_REF_NAME,
+            run_id: process.env.GITHUB_RUN_ID,
+            mode,
+            system_mode: process.env.EDEN_SYSTEM_MODE,
+            brand: process.env.EDEN_BRAND,
+            routing: {
+              image_provider: process.env.EDEN_IMAGE_PROVIDER,
+              video_provider: process.env.EDEN_VIDEO_PROVIDER,
+              control_plane: 'Auto Builder sandbox',
+              source_of_record: 'Google Drive workflow sheets'
+            },
+            drive_sources: {
+              master_router: process.env.EDEN_DRIVE_MASTER_ROUTER,
+              gpt_image_queue: process.env.EDEN_DRIVE_GPT_IMAGE_QUEUE,
+              image_library: process.env.EDEN_DRIVE_IMAGE_LIBRARY,
+              workflow_bridge: process.env.EDEN_DRIVE_WORKFLOW_BRIDGE
+            },
+            approval_gates: {
+              production_deploy: 'requires Jeremy approval',
+              shopify_mutation: 'requires Jeremy approval',
+              public_publishing: 'requires Jeremy approval',
+              payment_or_discount_change: 'requires Jeremy approval',
+              heygen_video_creation: 'requires Jeremy approval before spend/generation'
+            },
+            preview_hook_configured: Boolean(process.env.VERCEL_PREVIEW_DEPLOY_HOOK_URL),
+            next_actions: [
+              'Read Drive master media router',
+              'Process due GPT image queue rows into draft asset receipts',
+              'Queue HeyGen video drafts only after approval',
+              'Trigger Vercel preview hook if configured',
+              'Hold production deploy and public publishing until approval'
+            ]
+          };
+          fs.writeFileSync(`receipts/${receipt.receipt_id}.json`, JSON.stringify(receipt, null, 2));
+          console.log(JSON.stringify(receipt, null, 2));
+          NODE
+
+      - name: Trigger Vercel preview deploy hook when configured
+        if: ${{ secrets.VERCEL_PREVIEW_DEPLOY_HOOK_URL != '' && (github.event_name == 'schedule' || github.event.inputs.force_preview_hook == 'true') }}
+        env:
+          VERCEL_PREVIEW_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_PREVIEW_DEPLOY_HOOK_URL }}
+        run: |
+          curl --fail --show-error --silent \
+            --request POST "$VERCEL_PREVIEW_DEPLOY_HOOK_URL" \
+            --header "Content-Type: application/json" \
+            --data '{"source":"eden-media-factory-preview-cron","environment":"preview","production":false}'
+
+      - name: Note missing preview hook
+        if: ${{ secrets.VERCEL_PREVIEW_DEPLOY_HOOK_URL == '' }}
+        run: |
+          echo "VERCEL_PREVIEW_DEPLOY_HOOK_URL is not configured. Receipt was created; preview deploy trigger was skipped."
+
+      - name: Upload preview receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: eden-media-preview-cron-receipt-${{ github.run_id }}
+          path: receipts/*.json
+          if-no-files-found: error
