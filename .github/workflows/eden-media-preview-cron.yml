@@ -35,6 +35,8 @@ jobs:
     name: Build sandbox preview receipt
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      VERCEL_PREVIEW_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_PREVIEW_DEPLOY_HOOK_URL }}
     steps:
       - name: Checkout sandbox
         uses: actions/checkout@v4
@@ -89,9 +91,7 @@ jobs:
           NODE
 
       - name: Trigger Vercel preview deploy hook when configured
-        if: ${{ secrets.VERCEL_PREVIEW_DEPLOY_HOOK_URL != '' && (github.event_name == 'schedule' || github.event.inputs.force_preview_hook == 'true') }}
-        env:
-          VERCEL_PREVIEW_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_PREVIEW_DEPLOY_HOOK_URL }}
+        if: ${{ env.VERCEL_PREVIEW_DEPLOY_HOOK_URL != '' && (github.event_name == 'schedule' || github.event.inputs.force_preview_hook == 'true') }}
         run: |
           curl --fail --show-error --silent \
             --request POST "$VERCEL_PREVIEW_DEPLOY_HOOK_URL" \
@@ -99,7 +99,7 @@ jobs:
             --data '{"source":"eden-media-factory-preview-cron","environment":"preview","production":false}'
 
       - name: Note missing preview hook
-        if: ${{ secrets.VERCEL_PREVIEW_DEPLOY_HOOK_URL == '' }}
+        if: ${{ env.VERCEL_PREVIEW_DEPLOY_HOOK_URL == '' }}
         run: |
           echo "VERCEL_PREVIEW_DEPLOY_HOOK_URL is not configured. Receipt was created; preview deploy trigger was skipped."
 
