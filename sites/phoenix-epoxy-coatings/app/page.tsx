@@ -17,7 +17,7 @@ export default function Page() {
     <main className="v2-page">
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Phoenix Epoxy Coatings">
-          <img src="/v2-assets/logo.png" alt="Phoenix Epoxy Coatings" />
+          <img src="/v2-assets/logo.webp" alt="Phoenix Epoxy Coatings" />
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
