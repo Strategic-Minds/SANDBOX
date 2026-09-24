@@ -50,7 +50,10 @@ export default function Page() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-media" aria-hidden="true" />
+        <picture className="hero-picture" aria-hidden="true">
+          <source media="(max-width:900px)" srcSet="/v2-assets/mobile-clean.webp" />
+          <img src="/v2-assets/hero-clean.webp" alt="" />
+        </picture>
         <div className="hero-wash" aria-hidden="true" />
 
         <div className="hero-copy">
