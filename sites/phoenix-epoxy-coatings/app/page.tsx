@@ -1,4 +1,175 @@
-const body = "<div class=\"shell\">\n<header class=\"header\">\n<a class=\"logo\" href=\"#top\"><span class=\"logo-mark\"><span class=\"sun\"></span><span class=\"mountain\"></span><span class=\"cactus\"></span></span><span class=\"logo-copy\"><strong>PHOENIX</strong><small>EPOXY COATINGS</small></span></a>\n<nav class=\"nav\"><a href=\"#top\">Home</a><a href=\"#services\">Services</a><a href=\"#process\">About</a><a href=\"#work\">Our Work</a><a href=\"#areas\">Service Areas</a><a href=\"#faq\">Resources</a></nav>\n<div class=\"header-actions\"><a class=\"header-link\" href=\"#estimate\">Request Estimate</a><a class=\"btn btn-primary\" href=\"#estimate\">Get a Free Estimate →</a></div>\n<button class=\"menu\" aria-label=\"Menu\"><span></span></button>\n</header>\n<main id=\"top\">\n<section class=\"hero\">\n<div class=\"hero-bg\"></div>\n<div class=\"hero-content\">\n<p class=\"eyebrow\">Premium epoxy flooring & concrete coatings</p>\n<h1>Stronger Floors<br/>for a Brighter<br/><span>Phoenix</span></h1>\n<p class=\"hero-copy\">Durable. Beautiful. Built for Arizona. Professional epoxy flooring and concrete coating systems for homes and businesses across the Phoenix metro.</p>\n<div class=\"hero-buttons\"><a class=\"btn btn-primary\" href=\"#estimate\">Get a Free Estimate →</a><a class=\"btn btn-outline\" href=\"#work\">▶ See Our Work</a></div>\n<div class=\"hero-proof\"><div class=\"proof\"><span class=\"proof-icon\">◷</span><div><b>Fast Turnaround</b><small>System-dependent options</small></div></div><div class=\"proof\"><span class=\"proof-icon\">◎</span><div><b>Local Phoenix Focus</b><small>Metro-area project intake</small></div></div><div class=\"proof\"><span class=\"proof-icon\">◇</span><div><b>Prep-First Systems</b><small>Slab condition comes first</small></div></div></div>\n</div>\n<aside class=\"estimate-card\"><div class=\"spark\">✦</div><div><h3>AI Estimate Assistant</h3><p>Start with space, slab condition and project goals for a smarter estimate.</p><a class=\"btn btn-primary compact\" href=\"#estimate\">Try It Now →</a></div></aside>\n</section>\n<section class=\"trust\"><div><small>Built around real project conditions</small><span>Transparent process • Phoenix focused</span></div><div><strong>PREP</strong><span>Mechanical surface preparation</span></div><div><strong>UV</strong><span>Exposure-aware system selection</span></div><div><strong>REPAIR</strong><span>Crack & slab-condition review</span></div><div><strong>LOCAL</strong><span>Phoenix metro service focus</span></div></section>\n<section class=\"section\" id=\"services\">\n<div class=\"heading-row\"><div><h2>Our Epoxy Flooring & Concrete Coating Services</h2><p>Premium solutions for residential, commercial and industrial spaces in Phoenix.</p></div><a class=\"text-link\" href=\"#estimate\">View All Services →</a></div>\n<div class=\"services\">\n<article class=\"service\"><div class=\"service-media s1\"></div><div class=\"service-body\"><h3>Garage Floor Coatings</h3><p>Decorative resin systems selected around slab condition, traffic and finish goals.</p><a href=\"#estimate\">Learn More →</a></div></article>\n<article class=\"service\"><div class=\"service-media s2\"></div><div class=\"service-body\"><h3>Polyaspartic Coatings</h3><p>Fast-curing, UV-stable topcoat options when exposure and downtime matter.</p><a href=\"#estimate\">Learn More →</a></div></article>\n<article class=\"service\"><div class=\"service-media s3\"></div><div class=\"service-body\"><h3>Metallic Epoxy Floors</h3><p>Decorative finishes with depth and movement for premium interior spaces.</p><a href=\"#estimate\">Learn More →</a></div></article>\n<article class=\"service\"><div class=\"service-media s4\"></div><div class=\"service-body\"><h3>Commercial Flooring</h3><p>High-performance systems for shops, warehouses, service areas and facilities.</p><a href=\"#estimate\">Learn More →</a></div></article>\n<article class=\"service\"><div class=\"service-media s5\"></div><div class=\"service-body\"><h3>Concrete Protection</h3><p>Protection plans selected for traffic, exposure, maintenance and finish goals.</p><a href=\"#estimate\">Learn More →</a></div></article>\n</div>\n</section>\n<section class=\"proof-row\" id=\"work\">\n<div class=\"results\"><div class=\"results-copy\"><h2>Real Process.<br/>Better Results.</h2><p>From worn concrete to a clean, durable system, the transformation starts with preparation.</p><a class=\"btn btn-primary compact\" href=\"#estimate\">Plan Your Project →</a></div><div class=\"before-after\"><div class=\"divider\"></div><div class=\"handle\">↔</div></div></div>\n<div class=\"area\" id=\"areas\"><div class=\"area-copy\"><span class=\"pin\">⌖</span><b>Proudly Serving Phoenix & Surrounding Areas</b><p>Project intake for Phoenix and the surrounding metro, with system recommendations based on the actual site conditions.</p><a class=\"btn btn-outline compact\" href=\"#estimate\">Check Your Area →</a></div></div>\n</section>\n<section class=\"intel\" id=\"process\"><article><span class=\"intel-icon\">▥</span><div><h3>Local Pricing Intelligence</h3><p>Estimate logic considers size, prep, slab condition, repairs, exposure and access.</p></div></article><article><span class=\"intel-icon\">✦</span><div><h3>AI-Assisted Estimate Intake</h3><p>Structured project details produce more useful scopes than square footage alone.</p></div></article><article><span class=\"intel-icon\">◎</span><div><h3>Competitive Research</h3><p>Local offer, keyword and service research informs the site without copying competitors.</p></div></article></section>\n<section class=\"estimate\" id=\"estimate\">\n<div class=\"estimate-copy\"><p class=\"eyebrow warm\">Project-specific estimate</p><h2>Tell Us About<br/>Your Floor.</h2><p>A realistic coating estimate starts with the slab, not a generic price-per-square-foot promise.</p><div class=\"chips\"><span>Square footage</span><span>Slab condition</span><span>Cracks & repairs</span><span>Prep method</span><span>System choice</span><span>UV exposure</span><span>Access</span><span>Downtime</span></div></div>\n<form class=\"form\"><div class=\"grid\"><label>Name<input required placeholder=\"Your name\"/></label><label>Email<input type=\"email\" placeholder=\"you@example.com\"/></label><label>Phone<input placeholder=\"Phone number\"/></label><label>Project city<input defaultValue=\"Phoenix\"/></label><label>Project type<select defaultValue=\"Garage floor\"><option>Garage floor</option><option>Commercial floor</option><option>Metallic epoxy</option><option>Patio / exterior</option><option>Other</option></select></label><label>Approx. square feet<input type=\"number\" placeholder=\"500\"/></label><label class=\"wide\">Current floor condition<textarea rows={4} placeholder=\"Cracks, existing coating, stains, moisture concerns, age of slab...\"></textarea></label></div><div class=\"form-actions\"><button class=\"btn btn-primary\" type=\"button\">Request My Estimate →</button></div><p class=\"form-note\">Preview build. Lead capture is activated only after validation and server-side release wiring.</p></form>\n</section>\n<section class=\"faq\" id=\"faq\"><p class=\"eyebrow\">Phoenix coating questions</p><h2>Answers Before You Choose a System.</h2><details open><summary>What affects epoxy flooring cost in Phoenix?</summary><p>Square footage is only one variable. Preparation, repairs, moisture risk, system chemistry, finish, exposure, access and cure schedule can materially change the scope.</p></details><details><summary>Is epoxy or polyaspartic better for a garage?</summary><p>The right answer depends on the complete system. Epoxy can provide build and adhesion while polyaspartic topcoats are often chosen for faster cure and UV stability.</p></details><details><summary>Why does concrete preparation matter?</summary><p>Coating adhesion depends heavily on the condition and profile of the substrate. Mechanical preparation and repairs are core parts of a durable installation plan.</p></details></section>\n</main>\n<footer class=\"footer\"><a class=\"logo\" href=\"#top\"><span class=\"logo-mark\"><span class=\"sun\"></span><span class=\"mountain\"></span><span class=\"cactus\"></span></span><span class=\"logo-copy\"><strong>PHOENIX</strong><small>EPOXY COATINGS</small></span></a><p>Preview source truth. Business identity, licensing, contact details, warranties, reviews and project claims must be verified before public production release.</p><a class=\"text-link\" href=\"#estimate\">Request Estimate →</a></footer>\n</div>\n<div class=\"mobile-cta\"><a class=\"call\" href=\"#estimate\">Project Details</a><a class=\"quote\" href=\"#estimate\">Get a Free Estimate →</a></div>";
+const services = [
+  { title: "Garage Floor Coatings", icon: "⌂", pos: "0%" },
+  { title: "Polyaspartic Coatings", icon: "◇", pos: "25%" },
+  { title: "Metallic Epoxy Floors", icon: "✦", pos: "50%" },
+  { title: "Commercial Flooring", icon: "▥", pos: "75%" },
+  { title: "Concrete Sealing", icon: "◯", pos: "100%" },
+];
+
+const proofItems = [
+  ["◷", "Fast Turnaround", "Schedule based"],
+  ["♙", "Phoenix Metro Focus", "Local project intake"],
+  ["◇", "Prep-First Systems", "Slab before coating"],
+];
+
 export default function Page() {
-  return <div dangerouslySetInnerHTML={{ __html: body }} />;
+  return (
+    <main className="v2-page">
+      <header className="site-header">
+        <a className="brand" href="#top" aria-label="Phoenix Epoxy Coatings">
+          <img src="/v2-assets/logo.png" alt="Phoenix Epoxy Coatings" />
+        </a>
+
+        <nav className="desktop-nav" aria-label="Primary navigation">
+          <a href="#top">Home</a>
+          <a href="#services">Services <span>⌄</span></a>
+          <a href="#about">About</a>
+          <a href="#work">Our Work</a>
+          <a href="#areas">Service Areas</a>
+          <a href="#resources">Resources <span>⌄</span></a>
+        </nav>
+
+        <div className="header-actions">
+          <span className="metro-label">Phoenix Metro</span>
+          <a className="primary-cta header-cta" href="#estimate">Get a Free Estimate <span>→</span></a>
+        </div>
+
+        <button className="mobile-menu" type="button" aria-label="Open menu">
+          <span />
+          <span />
+          <span />
+        </button>
+      </header>
+
+      <section className="hero" id="top">
+        <div className="hero-media" aria-hidden="true" />
+        <div className="hero-wash" aria-hidden="true" />
+
+        <div className="hero-copy">
+          <p className="eyebrow">Premium epoxy flooring & concrete coatings</p>
+          <h1>Stronger Floors<br />for a Brighter<br /><span>Phoenix</span></h1>
+          <p className="hero-lead">
+            Durable. Beautiful. Built for Arizona. Professional epoxy flooring and concrete coatings
+            for homes and businesses across the Phoenix metro area.
+          </p>
+
+          <div className="hero-actions">
+            <a className="primary-cta" href="#estimate">Get a Free Estimate <span>→</span></a>
+            <a className="secondary-cta" href="#work"><span className="play">▶</span> See Our Work</a>
+          </div>
+
+          <div className="hero-proofs">
+            {proofItems.map(([icon, title, sub]) => (
+              <div className="proof-item" key={title}>
+                <span className="proof-icon">{icon}</span>
+                <span>
+                  <b>{title}</b>
+                  <small>{sub}</small>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside className="ai-card" aria-label="AI estimate assistant preview">
+          <span className="ai-spark">✦</span>
+          <div>
+            <h2>AI Estimate Assistant</h2>
+            <p>Get an instant ballpark estimate based on your space and local Phoenix pricing inputs.</p>
+            <a className="primary-cta ai-button" href="#estimate">Try It Now <span>→</span></a>
+          </div>
+        </aside>
+      </section>
+
+      <section className="trust-strip" aria-label="Trust proof placeholders pending verification">
+        <div className="trust-summary">
+          <b>Trusted project planning signals</b>
+          <span className="stars">★★★★★</span>
+          <small>Proof badges activate only after verification</small>
+        </div>
+        <div><strong className="google">Google</strong><small>Reviews after verification</small></div>
+        <div><strong className="facebook">facebook</strong><small>Community references</small></div>
+        <div><strong className="neutral">BBB</strong><small>Status not claimed</small></div>
+        <div><strong className="neutral">HomeAdvisor</strong><small>Status not claimed</small></div>
+        <div><strong className="angi">Angi</strong><small>Status not claimed</small></div>
+      </section>
+
+      <section className="services-section" id="services">
+        <div className="section-heading">
+          <div>
+            <h2>Our Epoxy Flooring & Concrete Coating Services</h2>
+            <p>Premium solutions for residential, commercial, and industrial spaces in Phoenix.</p>
+          </div>
+          <a className="orange-link" href="#estimate">View All Services <span>→</span></a>
+        </div>
+
+        <div className="service-grid">
+          {services.map((service, index) => (
+            <article className={"service-card service-" + (index + 1)} key={service.title}>
+              <div className="service-photo" style={{ backgroundPosition: service.pos }} />
+              <div className="service-copy">
+                <div className="service-title">
+                  <span>{service.icon}</span>
+                  <h3>{service.title}</h3>
+                </div>
+                <p>{[
+                  "Transform your garage with durable, clean-looking coating systems.",
+                  "UV-resistant, fast-curing options for Arizona heat and demanding spaces.",
+                  "Statement finishes with depth and movement for premium interiors.",
+                  "High-performance floors for shops, service areas, retail, and facilities.",
+                  "Protect and extend the life of concrete with professionally selected sealers.",
+                ][index]}</p>
+                <a href="#estimate">Learn More <span>→</span></a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="proof-grid" id="work">
+        <article className="results-panel">
+          <div className="results-copy">
+            <h2>Real Transformations.<br />Real Results.</h2>
+            <p>From worn concrete to show-stopping spaces. See the difference a well-planned coating system can make.</p>
+            <a className="primary-cta compact-cta" href="#estimate">View Our Project Gallery <span>→</span></a>
+          </div>
+          <div className="before-after" aria-label="Before and after floor preview">
+            <span className="before-label">BEFORE</span>
+            <span className="after-label">AFTER</span>
+            <span className="ba-divider" />
+            <span className="ba-handle">↔</span>
+          </div>
+        </article>
+
+        <article className="service-area-panel" id="areas">
+          <div className="area-overlay" />
+          <div className="area-copy">
+            <span className="pin">●</span>
+            <h2>Proudly Serving<br />Phoenix & Surrounding Areas</h2>
+            <p>Project intake is designed for Phoenix and the surrounding metro area.</p>
+            <a className="light-cta" href="#estimate">View Service Areas <span>→</span></a>
+          </div>
+        </article>
+      </section>
+
+      <section className="intel-strip" id="about">
+        <article><span className="intel-icon">▥</span><div><h3>Local Pricing Intelligence</h3><p>Market-aware ranges based on actual project conditions.</p></div></article>
+        <article><span className="intel-icon">▣</span><div><h3>AI-Powered Estimates</h3><p>Structured intake using scope, footage, and slab signals.</p></div></article>
+        <article><span className="intel-icon">◎</span><div><h3>Competitive Insights</h3><p>Research-backed positioning without copying competitors.</p></div></article>
+      </section>
+
+      <section className="estimate-gate" id="estimate">
+        <div>
+          <p className="eyebrow">Visual rebuild gate</p>
+          <h2>Lead capture stays off until the visual build passes.</h2>
+          <p>This preview intentionally does not submit or persist customer data.</p>
+        </div>
+        <button className="primary-cta disabled-cta" type="button" aria-disabled="true">
+          Estimate Intake Activates After Validation
+        </button>
+      </section>
+
+      <div id="resources" className="preview-spacer" />
+    </main>
+  );
 }
