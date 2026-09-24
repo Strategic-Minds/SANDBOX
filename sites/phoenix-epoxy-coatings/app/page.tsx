@@ -17,7 +17,15 @@ export default function Page() {
     <main className="v2-page">
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Phoenix Epoxy Coatings">
-          <img src="/v2-assets/logo.webp" alt="Phoenix Epoxy Coatings" />
+          <span className="brand-mark" aria-hidden="true">
+            <span className="brand-sun" />
+            <span className="brand-mountain" />
+            <span className="brand-cactus" />
+          </span>
+          <span className="brand-copy">
+            <strong>PHOENIX</strong>
+            <small>EPOXY COATINGS</small>
+          </span>
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
@@ -97,7 +105,7 @@ export default function Page() {
       <section className="services-section" id="services">
         <div className="section-heading">
           <div>
-            <h2>Our Epoxy Flooring & Concrete Coating Services</h2>
+            <h2><span className="desktop-service-title">Our Epoxy Flooring & Concrete Coating Services</span><span className="mobile-service-title">Our Services</span></h2>
             <p>Premium solutions for residential, commercial, and industrial spaces in Phoenix.</p>
           </div>
           <a className="orange-link" href="#estimate">View All Services <span>→</span></a>
