@@ -35,8 +35,9 @@ button,input,textarea,select{font:inherit}
 .mobile-menu span{display:block;height:2px;background:#111;margin:5px 4px}
 
 .hero{height:520px;position:relative;overflow:hidden;border-bottom:1px solid #eee}
-.hero-media{position:absolute;inset:0 0 0 29%;background:url('/v2-assets/hero-clean.webp') center right/cover no-repeat}
-.hero-wash{position:absolute;inset:0;background:linear-gradient(90deg,#fff 0%,#fff 27%,rgba(255,255,255,.97) 37%,rgba(255,255,255,.77) 48%,rgba(255,255,255,.12) 69%,transparent 82%)}
+.hero-picture{position:absolute;inset:0 0 0 29%;z-index:0;display:block;overflow:hidden}
+.hero-picture img{display:block;width:100%;height:100%;object-fit:cover;object-position:center right}
+.hero-wash{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#fff 0%,#fff 27%,rgba(255,255,255,.97) 37%,rgba(255,255,255,.77) 48%,rgba(255,255,255,.12) 69%,transparent 82%)}
 .hero-copy{position:relative;z-index:3;width:690px;padding:49px 0 0 76px}
 .eyebrow{margin:0 0 12px;text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900}
 .hero h1{margin:0;font-size:69px;line-height:.91;letter-spacing:-.058em;font-weight:950}
@@ -123,7 +124,8 @@ button,input,textarea,select{font:inherit}
   .desktop-nav,.header-actions{display:none}
   .mobile-menu{display:block}
   .hero{height:auto;background:#fff}
-  .hero-media{inset:0 0 auto 0;height:410px;background-image:url('/v2-assets/mobile-clean.webp');background-position:center top;background-size:cover;background-repeat:no-repeat}
+  .hero-picture{inset:0 0 auto 0;height:410px}
+  .hero-picture img{object-position:center top}
   .hero-wash{height:410px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.02) 68%,#fff 100%),linear-gradient(90deg,#fff 0%,rgba(255,255,255,.95) 46%,rgba(255,255,255,.54) 70%,rgba(255,255,255,.04) 100%)}
   .hero-copy{width:auto;padding:46px 22px 24px;min-height:410px}
   .eyebrow{font-size:10px;margin-bottom:12px}
@@ -162,7 +164,7 @@ button,input,textarea,select{font:inherit}
 @media(max-width:430px){
   .site-header{height:74px;padding:0 17px}
   .brand-mark{width:45px;height:38px;flex-basis:45px}.brand-copy strong{font-size:17px}.brand-copy small{font-size:6.8px}
-  .hero-media,.hero-wash{height:384px}
+  .hero-picture,.hero-wash{height:384px}
   .hero-copy{min-height:384px;padding:38px 20px 21px}
   .hero h1{font-size:40px}
   .hero-lead{font-size:12.5px;max-width:315px}
