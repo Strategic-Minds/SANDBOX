@@ -207,3 +207,48 @@ button,input,textarea,select{font:inherit}
 
 /* V2 visual-only gate suppression: backend remains disabled until explicit activation */
 .estimate-gate,.preview-spacer{display:none!important}
+
+
+/* V2 Repair Loop 5: final reference-fidelity tuning */
+@media(min-width:901px){
+  .hero-picture{inset:0 0 0 24%}
+  .hero-wash{
+    background:linear-gradient(90deg,#fff 0%,#fff 24%,rgba(255,255,255,.96) 34%,rgba(255,255,255,.66) 46%,rgba(255,255,255,.16) 66%,transparent 80%)
+  }
+}
+
+@media(max-width:900px){
+  .hero{position:relative;isolation:isolate}
+  .hero-picture{height:392px}
+  .hero-picture img{object-position:72% top}
+  .hero-wash{
+    height:392px;
+    background:
+      linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.01) 72%,rgba(255,255,255,.95) 96%,#fff 100%),
+      linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.9) 38%,rgba(255,255,255,.46) 62%,rgba(255,255,255,.08) 84%,transparent 100%)
+  }
+  .hero-copy{min-height:392px}
+  .hero::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:0;
+    height:178px;
+    z-index:2;
+    background:url('/v2-assets/hero-clean.jpg') center 58%/cover no-repeat;
+  }
+  .ai-card{
+    z-index:5;
+    width:calc(100% - 96px);
+    margin:74px 48px 26px;
+    padding:13px 14px;
+    box-shadow:0 13px 30px rgba(0,0,0,.16)
+  }
+  .services-section{position:relative;z-index:6;background:#fff}
+}
+
+@media(max-width:430px){
+  .hero-picture,.hero-wash{height:374px}
+  .hero-copy{min-height:374px;padding-top:34px}
+  .hero::after{height:166px}
+  .ai-card{width:calc(100% - 70px);margin:68px 35px 24px}
+}
