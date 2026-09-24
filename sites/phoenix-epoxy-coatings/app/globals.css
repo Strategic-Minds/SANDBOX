@@ -35,7 +35,7 @@ button,input,textarea,select{font:inherit}
 .mobile-menu span{display:block;height:2px;background:#111;margin:5px 4px}
 
 .hero{height:520px;position:relative;overflow:hidden;border-bottom:1px solid #eee}
-.hero-media{position:absolute;inset:0 0 0 29%;background:url('/v2-assets/hero.webp') center right/cover no-repeat}
+.hero-media{position:absolute;inset:0 0 0 29%;background:url('/v2-assets/hero-clean.webp') center right/cover no-repeat}
 .hero-wash{position:absolute;inset:0;background:linear-gradient(90deg,#fff 0%,#fff 27%,rgba(255,255,255,.97) 37%,rgba(255,255,255,.77) 48%,rgba(255,255,255,.12) 69%,transparent 82%)}
 .hero-copy{position:relative;z-index:3;width:690px;padding:49px 0 0 76px}
 .eyebrow{margin:0 0 12px;text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900}
@@ -123,8 +123,8 @@ button,input,textarea,select{font:inherit}
   .desktop-nav,.header-actions{display:none}
   .mobile-menu{display:block}
   .hero{height:auto;background:#fff}
-  .hero-media{inset:0 0 auto 0;height:410px;background-image:url('/v2-assets/hero.webp');background-position:left top;background-size:auto 100%;background-repeat:no-repeat}
-  .hero-wash{height:410px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.03) 62%,rgba(255,255,255,.96) 100%),linear-gradient(90deg,#fff 0%,rgba(255,255,255,.96) 45%,rgba(255,255,255,.58) 68%,rgba(255,255,255,.06) 100%)}
+  .hero-media{inset:0 0 auto 0;height:410px;background-image:url('/v2-assets/mobile-clean.webp');background-position:center top;background-size:cover;background-repeat:no-repeat}
+  .hero-wash{height:410px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.02) 68%,#fff 100%),linear-gradient(90deg,#fff 0%,rgba(255,255,255,.95) 46%,rgba(255,255,255,.54) 70%,rgba(255,255,255,.04) 100%)}
   .hero-copy{width:auto;padding:46px 22px 24px;min-height:410px}
   .eyebrow{font-size:10px;margin-bottom:12px}
   .hero h1{font-size:43px;line-height:.94;max-width:360px}
@@ -201,3 +201,7 @@ button,input,textarea,select{font:inherit}
   .brand-copy small{font-size:6.7px;margin-top:4px}
   .mobile-menu{display:block!important;justify-self:end}
 }
+
+
+/* V2 visual-only gate suppression: backend remains disabled until explicit activation */
+.estimate-gate,.preview-spacer{display:none!important}
