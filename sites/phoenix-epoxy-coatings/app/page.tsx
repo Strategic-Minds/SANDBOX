@@ -51,8 +51,8 @@ export default function Page() {
 
       <section className="hero" id="top">
         <picture className="hero-picture" aria-hidden="true">
-          <source media="(max-width:900px)" srcSet="/v2-assets/mobile-clean.webp" />
-          <img src="/v2-assets/hero-clean.webp" alt="" />
+          <source media="(max-width:900px)" srcSet="/v2-assets/mobile-clean.jpg" />
+          <img src="/v2-assets/hero-clean.jpg" alt="" />
         </picture>
         <div className="hero-wash" aria-hidden="true" />
 
